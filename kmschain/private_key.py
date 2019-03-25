@@ -3,9 +3,9 @@ import proxylib
 import binascii
 
 #
-from .proxy_lib import ProxyLib
-from .public_key import PublicKey
-from .re_key import ReEncryptionKey
+from proxy_lib import ProxyLib
+from public_key import PublicKey
+from re_key import ReEncryptionKey
 
 
 #

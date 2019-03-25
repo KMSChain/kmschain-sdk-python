@@ -1,9 +1,9 @@
 #
 from .proxy_lib import ProxyLib
-from .private_key import PrivateKey
-from .public_key import PublicKey
-from .capsule import Capsule
-from .re_key import ReEncryptionKey
+from private_key import PrivateKey
+from public_key import PublicKey
+from capsule import Capsule
+from re_key import ReEncryptionKey
 
 
 #

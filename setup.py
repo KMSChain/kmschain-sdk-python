@@ -19,7 +19,7 @@ class BuilderClass(build_py):
    
 
     def run(self):
-      os.system("git clone https://github.com/kmschain/kmschain-sdk-cpp {}".format(self.LIBNAME))
+      os.system("git clone https://github.com/skycryptor/cryptomagic.git {}".format(self.LIBNAME))
       os.chdir("{}/{}".format(self.SOURCE_DIR, self.LIBNAME))
       if os.path.exists("build"):
           shutil.rmtree("build", ignore_errors=True)

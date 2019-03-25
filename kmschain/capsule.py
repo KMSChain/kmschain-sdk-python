@@ -3,7 +3,7 @@ import binascii
 import proxylib
 
 #
-from .proxy_lib import ProxyLib
+from proxy_lib import ProxyLib
 
 
 #

@@ -17,15 +17,16 @@ class KeyFromToBytes(TestProxyLib):
     #
     def test_public_key_from_to_bytes(self):
         KmsChain = KMSChain()
-        print("AAAAAAA\n")
         sk = KmsChain.generate()
 
         pk_1 = KmsChain.public_key(sk)
 
         pk_data_1 = pk_1.to_bytes()
+        print("\nPK1 {}\n".format(pk_data_1))
         pk_2 = KmsChain.public_key_from_bytes(pk_data_1)
 
         pk_data_2 = pk_2.to_bytes()
+        print("\nPK2 {}\n".format(pk_data_2))
 
         self.assertEqual(pk_data_1, pk_data_2)
 

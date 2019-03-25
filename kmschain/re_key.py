@@ -3,8 +3,8 @@ import binascii
 import proxylib
 
 #
-from .proxy_lib import ProxyLib
-from .capsule import Capsule
+from proxy_lib import ProxyLib
+from capsule import Capsule
 
 
 #
@@ -22,8 +22,8 @@ class ReEncryptionKey(ProxyLib):
         :return recapsule: re-encrypted capsule
         """
 
-        recapsule = Capsule()
-        capsule_pointer = cryptomagic.cryptomagic_get_re_encryption_capsule(self.cm.get_pointer(), capsule.get_pointer(), self.get_pointer())
+        recapsule = Capsule(ProxyLib())
+        capsule_pointer = proxylib.proxylib_get_re_encryption_capsule(self.cm.get_pointer(), capsule.get_pointer(), self.get_pointer())
         recapsule.set_pointer(capsule_pointer)
         return recapsule
 

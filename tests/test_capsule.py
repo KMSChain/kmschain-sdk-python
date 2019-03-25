@@ -116,9 +116,9 @@ class Capsule(TestProxyLib):
         recapsule = KmsChain.re_encrypt(rk_AB, alice_capsule)
         bob_symmetric_key = KmsChain.decapsulate(bob_sk, recapsule)
 
-        recapsule = rk_AB.re_encrypt(alice_capsule)
+        recapsule = KmsChain.re_encrypt(rk_AB, alice_capsule)
 
-        bob_symmetric_key = bob_sk.decapsulate(recapsule)
+        bob_symmetric_key = KmsChain.decapsulate(bob_sk, recapsule)
         bob_cipher = AESCipher(binascii.hexlify(bob_symmetric_key)[:16])
        
         decrypted = bob_cipher.decrypt(ciphertext)

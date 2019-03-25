@@ -3,8 +3,8 @@ import binascii
 import proxylib
 
 #
-from .proxy_lib import ProxyLib
-from .capsule import Capsule
+from proxy_lib import ProxyLib
+from capsule import Capsule
 
 
 #
@@ -49,4 +49,4 @@ class PublicKey(ProxyLib):
         capsule = Capsule(ProxyLib())
         capsule_pointer, symmetric_key = proxylib.proxylib_encapsulate(self.cm.get_pointer(), self.get_pointer())
         capsule.set_pointer(capsule_pointer)
-        return capsule, symmetric_key
+        return capsule, binascii.hexlify(symmetric_key)
